@@ -1,14 +1,9 @@
 const drink = document.querySelector("#drink");
-const doit = document.querySelector("#doit");
 
 chrome.runtime.onMessage.addListener(async ({ type }) => {
-  console.log("type:", type);
   switch (type) {
     case "drink":
       playAudio("play");
-      break;
-    case "doit":
-      await doit?.play();
       break;
   }
 });
@@ -26,7 +21,6 @@ async function playAudio(status) {
       break;
     case "stop":
       drink?.pause();
-      doit?.pause();
       break;
   }
 }

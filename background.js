@@ -7,17 +7,7 @@ async function createOffScreen() {
   });
 }
 
-function alarmsCreator(name, minutes) {
-  chrome.alarms.create(name, {
-    delayInMinutes: minutes,
-    periodInMinutes: minutes,
-  });
-}
-// chrome.alarms.create("drink", {
-//   delayInMinutes: 15,
-//   periodInMinutes: 15,
-// });
-chrome.alarms.create("doit", {
+chrome.alarms.create("drink", {
   delayInMinutes: 15,
   periodInMinutes: 15,
 });
@@ -27,10 +17,6 @@ chrome.alarms.onAlarm.addListener(async ({ name }) => {
     case "drink":
       await createOffScreen();
       await chrome.runtime.sendMessage({ type: "drink" });
-      break;
-    case "doit":
-      await createOffScreen();
-      await chrome.runtime.sendMessage({ type: "doit" });
       break;
   }
 });

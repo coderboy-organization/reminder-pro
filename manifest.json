@@ -1,13 +1,12 @@
 {
-  "name": "Reminder Assistance",
-  "description": "Fucking reminder 😅",
+  "name": "Reminder Pro",
+  "description": "Reminder assistance 😅",
   "manifest_version": 3,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["offscreen", "alarms", "tabs", "activeTab"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": ["offscreen", "alarms"],
   "commands": {
     "play-audio": {
       "suggested_key": { "default": "Alt+W" },
